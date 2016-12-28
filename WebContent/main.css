@@ -1,0 +1,110 @@
+
+body {
+	font-family: Avenir,Helvetica,Arial,sans-serif !important;
+}
+
+h2 {
+    text-align: center;
+	padding-top:70px;
+}
+
+.selectClass {
+	margin-top:70px;
+}
+
+.selectBox {
+	margin-left:32%;
+	height:35px;
+	cursor:pointer;
+	border-radius:12px;
+	font-weight: inherit;
+    font-style: inherit;
+    font-family: inherit;
+	border: 0;
+	outline:none;
+}
+
+.buttonStyle {
+    margin-top: 3%;
+    margin-left: 46%;
+    background: #428BCA;
+    border-radius: 12px;
+    min-width: 85px;
+    min-height: 30px;
+    color: white;
+	border: 0;
+	outline:none;
+}
+
+button:hover {
+  background: #3071A9
+}
+
+.textBoxStyle {
+	margin-left: 3%;
+	height:27px;
+	width:300px;
+}
+
+.bImage {
+	background: url('carousel-disney-springs.jpg');
+	height: 470px;
+	margin-top: 5%;
+}
+
+.bDImage {
+	background: url('poc_image2.jpg');
+	height: 138px;
+}
+
+.panelClass {
+    height: 196px;
+	display:block;
+}
+
+.divImage {
+	width:450px;
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.margin2 {
+	margin-left:5%;
+}
+
+.panelImage1, .panelImage2, .panelImage3 {
+	height: 178px;
+    width: 285px;
+	margin-top: 10px;
+}
+
+.panelImage1 {
+	background: url('poc_image5.jpg');
+}
+
+.panelImage2 {
+	background: url('poc_image6.jpg');
+}
+
+.panelImage3 {
+	background: url('poc_image8.jpg');
+}
+
+.dvfooter {
+	background-color: cyan;
+	height: 20px;
+	margin-top:10px;
+}
+
+.welcomeClass {
+	height: 100px;
+    background-color: #428BCA;
+    color: white;
+}
+
+.titleClass {
+	background-color: beige;
+    margin-top: 10px;
+    height: 25px;
+    padding-top: 9px;
+}

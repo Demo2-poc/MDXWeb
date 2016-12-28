@@ -1,0 +1,90 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>My Experience</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width">
+        <link rel="stylesheet" href="main.css" />
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+        <script src="http://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.8/angular-ui-router.min.js"></script>
+        <script src="scripts/app.js"></script>
+    </head>
+
+    <body ng-app="myExpApp">
+		<header>
+			<div class="bDImage" ng-show="showPage2"></div>
+		</header>
+        <div ng-controller="myExpCtrl">
+			<div ng-show="showPage1" class="bImage">
+				<h2 style="color:white">My Experience</h2>
+				<div class="selectClass">
+					<select class="selectBox" ng-model="selectedId" ng-options="expid.name for expid in expids"></select>
+					<input type="textbox" class="textBoxStyle" ng-model="enteredValue" />
+					<button id="submitBtn" class="buttonStyle" ng-click="fetchExpDetails()">Submit</button>
+				</div>
+			</div>
+		
+			<div ng-show="showPage2">
+				<div class="welcomeClass">
+					<h4 style="padding-top:10px">Guest Details</h4>
+					<div style="padding-left:60px"><i>Welcome,</i> {{detailsName}}</div>
+					<div style="padding-left:60px"><i>swid :</i> {{detailsSwid}}</div>
+				</div>
+				
+				<div ng-click="loadTicket()" class="titleClass">Ticketing</div>
+				<div class="panelClass" ng-repeat="tk in ticketing" ng-show="showTickets">
+					<div class="divImage">				
+						<div style="color:orange"><b>Expiration Date : </b></div>
+						<div>{{tk.ExpirationDate}}</div>
+					</div>
+					<div class="divImage margin2">
+						<div class="panelImage1"></div>
+					</div>
+					<div class="divImage">
+						<div>Ticket Type : {{tk.Type}}</div>
+						<div>Status : {{tk.Status}}</div>
+					</div>
+				</div>
+				
+				<div ng-click="loadAccomodation()" class="titleClass">Accomodation</div>
+				<div class="panelClass" ng-repeat="acc in accomodation" style="margin-top:23px" ng-show="showAccomodation">
+					<div class="divImage">
+						<div style="color:orange"><b>Arrival Date: </b> {{acc.ArrivalDate}}</div>
+						<div style="color:orange"><b>Departure Date: </b> {{acc.DepartureDate}}</div>
+					</div>
+					<div class="divImage margin2">
+						<div class="panelImage2"></div>
+					</div>
+					<div class="divImage">
+						<div>Resort Name : {{acc.ResortName}}</div>
+						<div>Status : {{acc.Status}}</div>
+					</div>
+				</div>
+				
+				<div ng-click="loadFastpass()" class="titleClass">Fastpass</div>
+				<div class="panelClass" ng-repeat="fp in fastpass" style="margin-top:23px" ng-show="showFastpass">
+					<div class="divImage">
+						<div>Date: {{fp.returnWindowStartTime.substring(0,10)}}</div> 
+						<div style="color:orange"><b>Arrive Between</b></div>
+						<div>{{fp.returnWindowStartTime.substring(11,16)}} <b style="color:blue">and</b> {{fp.returnWindowEndTime.substring(11,16)}}</div>
+					</div>
+					<div class="divImage margin2">
+						<div class="panelImage3"></div>
+					</div>
+					<div class="divImage">
+						<div>Attraction Name : {{fp.AttractionName}}</div>
+						<div>Park : {{fp.Park}}</div>
+						<div>Status : {{fp.status}}</div>
+						<div>Fastpass ID : {{fp.entertainmentId}}</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<footer>
+			<h6 style="color:black">@ All Rights Reserved</h6>
+		</footer>
+    </body>
+	
+</html>
